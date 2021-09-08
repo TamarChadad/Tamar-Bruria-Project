@@ -1,0 +1,10 @@
+.program{
+    border: 3px solid brown;
+    border-radius: 2%;
+    padding: 10%;
+}
+.row{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}

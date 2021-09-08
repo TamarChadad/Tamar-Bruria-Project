@@ -1,0 +1,24 @@
+D:\תכנות\פרויקט גמר\FinalProject\DTO\bin\Debug\DTO.dll
+D:\תכנות\פרויקט גמר\FinalProject\DTO\bin\Debug\DTO.pdb
+D:\תכנות\פרויקט גמר\FinalProject\DTO\obj\Debug\DTO.csprojAssemblyReference.cache
+D:\תכנות\פרויקט גמר\FinalProject\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+D:\תכנות\פרויקט גמר\FinalProject\DTO\obj\Debug\DTO.dll
+D:\תכנות\פרויקט גמר\FinalProject\DTO\obj\Debug\DTO.pdb
+E:\לפרוייקט\FinalProject\DTO\bin\Debug\DTO.dll
+E:\לפרוייקט\FinalProject\DTO\bin\Debug\DTO.pdb
+E:\לפרוייקט\FinalProject\DTO\obj\Debug\DTO.csprojAssemblyReference.cache
+E:\לפרוייקט\FinalProject\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+E:\לפרוייקט\FinalProject\DTO\obj\Debug\DTO.dll
+E:\לפרוייקט\FinalProject\DTO\obj\Debug\DTO.pdb
+Y:\תשפא\3\גרינוולד ברוריה\Final-Project\Final-Project\FinalProject\DTO\bin\Debug\DTO.dll
+Y:\תשפא\3\גרינוולד ברוריה\Final-Project\Final-Project\FinalProject\DTO\bin\Debug\DTO.pdb
+Y:\תשפא\3\גרינוולד ברוריה\Final-Project\Final-Project\FinalProject\DTO\obj\Debug\DTO.csprojAssemblyReference.cache
+Y:\תשפא\3\גרינוולד ברוריה\Final-Project\Final-Project\FinalProject\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+Y:\תשפא\3\גרינוולד ברוריה\Final-Project\Final-Project\FinalProject\DTO\obj\Debug\DTO.dll
+Y:\תשפא\3\גרינוולד ברוריה\Final-Project\Final-Project\FinalProject\DTO\obj\Debug\DTO.pdb
+D:\FinalProject\Programs-FinalProject\FinalProject\DTO\bin\Debug\DTO.dll
+D:\FinalProject\Programs-FinalProject\FinalProject\DTO\bin\Debug\DTO.pdb
+D:\FinalProject\Programs-FinalProject\FinalProject\DTO\obj\Debug\DTO.csprojAssemblyReference.cache
+D:\FinalProject\Programs-FinalProject\FinalProject\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+D:\FinalProject\Programs-FinalProject\FinalProject\DTO\obj\Debug\DTO.dll
+D:\FinalProject\Programs-FinalProject\FinalProject\DTO\obj\Debug\DTO.pdb

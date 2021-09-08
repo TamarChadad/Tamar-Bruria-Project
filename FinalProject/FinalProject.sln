@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2046
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "Api\API.csproj", "{83DC616D-3114-4B95-A7A7-1975CE25087C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{7B82A072-675C-4F62-A83C-2174A507175D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BL", "BL\BL.csproj", "{4A2DB734-0EFF-483F-84A9-515C9FDB93B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTO", "DTO\DTO.csproj", "{DCF24B73-C4AE-43F4-BFC4-44591A6AAC76}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		HomeBruria|Any CPU = HomeBruria|Any CPU
+		HomeTamar|Any CPU = HomeTamar|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{83DC616D-3114-4B95-A7A7-1975CE25087C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83DC616D-3114-4B95-A7A7-1975CE25087C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83DC616D-3114-4B95-A7A7-1975CE25087C}.HomeBruria|Any CPU.ActiveCfg = HomeBruria|Any CPU
+		{83DC616D-3114-4B95-A7A7-1975CE25087C}.HomeBruria|Any CPU.Build.0 = HomeBruria|Any CPU
+		{83DC616D-3114-4B95-A7A7-1975CE25087C}.HomeTamar|Any CPU.ActiveCfg = Home|Any CPU
+		{83DC616D-3114-4B95-A7A7-1975CE25087C}.HomeTamar|Any CPU.Build.0 = Home|Any CPU
+		{83DC616D-3114-4B95-A7A7-1975CE25087C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83DC616D-3114-4B95-A7A7-1975CE25087C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B82A072-675C-4F62-A83C-2174A507175D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B82A072-675C-4F62-A83C-2174A507175D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B82A072-675C-4F62-A83C-2174A507175D}.HomeBruria|Any CPU.ActiveCfg = HomeBruria|Any CPU
+		{7B82A072-675C-4F62-A83C-2174A507175D}.HomeBruria|Any CPU.Build.0 = HomeBruria|Any CPU
+		{7B82A072-675C-4F62-A83C-2174A507175D}.HomeTamar|Any CPU.ActiveCfg = Home|Any CPU
+		{7B82A072-675C-4F62-A83C-2174A507175D}.HomeTamar|Any CPU.Build.0 = Home|Any CPU
+		{7B82A072-675C-4F62-A83C-2174A507175D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B82A072-675C-4F62-A83C-2174A507175D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A2DB734-0EFF-483F-84A9-515C9FDB93B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A2DB734-0EFF-483F-84A9-515C9FDB93B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A2DB734-0EFF-483F-84A9-515C9FDB93B3}.HomeBruria|Any CPU.ActiveCfg = HomeBruria|Any CPU
+		{4A2DB734-0EFF-483F-84A9-515C9FDB93B3}.HomeBruria|Any CPU.Build.0 = HomeBruria|Any CPU
+		{4A2DB734-0EFF-483F-84A9-515C9FDB93B3}.HomeTamar|Any CPU.ActiveCfg = Home|Any CPU
+		{4A2DB734-0EFF-483F-84A9-515C9FDB93B3}.HomeTamar|Any CPU.Build.0 = Home|Any CPU
+		{4A2DB734-0EFF-483F-84A9-515C9FDB93B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A2DB734-0EFF-483F-84A9-515C9FDB93B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCF24B73-C4AE-43F4-BFC4-44591A6AAC76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCF24B73-C4AE-43F4-BFC4-44591A6AAC76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCF24B73-C4AE-43F4-BFC4-44591A6AAC76}.HomeBruria|Any CPU.ActiveCfg = HomeBruria|Any CPU
+		{DCF24B73-C4AE-43F4-BFC4-44591A6AAC76}.HomeBruria|Any CPU.Build.0 = HomeBruria|Any CPU
+		{DCF24B73-C4AE-43F4-BFC4-44591A6AAC76}.HomeTamar|Any CPU.ActiveCfg = Home|Any CPU
+		{DCF24B73-C4AE-43F4-BFC4-44591A6AAC76}.HomeTamar|Any CPU.Build.0 = Home|Any CPU
+		{DCF24B73-C4AE-43F4-BFC4-44591A6AAC76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCF24B73-C4AE-43F4-BFC4-44591A6AAC76}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {284A1C92-DCD8-4C9F-99E6-E05AB0953868}
+	EndGlobalSection
+EndGlobal
