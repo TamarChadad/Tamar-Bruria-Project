@@ -11,15 +11,16 @@ namespace DAL
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class User:IDALTables
+
+    public partial class User : IDALTables
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public User()
         {
+            this.Rent = new HashSet<Rent>();
             this.Response = new HashSet<Response>();
         }
-    
+
         public int Uid { get; set; }
         public string UfirstName { get; set; }
         public string UlastName { get; set; }
@@ -28,8 +29,9 @@ namespace DAL
         public string Uphone { get; set; }
         public string Upassword { get; set; }
         public string UuserName { get; set; }
-    
-        public virtual Rent Rent { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Rent> Rent { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Response> Response { get; set; }
     }

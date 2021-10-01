@@ -11,17 +11,16 @@ namespace DAL
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class Response:IDALTables
+
+    public partial class Response : IDALTables
     {
         public int RSid { get; set; }
         public int RSprogramId { get; set; }
         public int RSuserId { get; set; }
         public string RSdescription { get; set; }
         public bool RSshown { get; set; }
-    
-        public virtual Response Response1 { get; set; }
-        public virtual Response Response2 { get; set; }
+
+        public virtual Program Program { get; set; }
         public virtual User User { get; set; }
     }
 }

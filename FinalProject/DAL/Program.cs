@@ -11,24 +11,34 @@ namespace DAL
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class Program:IDALTables
+
+    public partial class Program : IDALTables
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Program()
         {
+            this.File = new HashSet<File>();
             this.Rent = new HashSet<Rent>();
+            this.Response = new HashSet<Response>();
         }
-    
+
         public int Pid { get; set; }
         public string Pname { get; set; }
-        public string PcategoryId { get; set; }
+        public int PcategoryId { get; set; }
         public int Pprice { get; set; }
         public int PextraPriceForAdditionalScreening { get; set; }
         public System.DateTime PproductionDate { get; set; }
-    
-        public virtual File File { get; set; }
+        public string Ptype { get; set; }
+        public string PtargetAudience { get; set; }
+        public Nullable<int> Ptime { get; set; }
+        public string Pdescription { get; set; }
+
+        public virtual Category Category { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<File> File { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Rent> Rent { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Response> Response { get; set; }
     }
 }

@@ -11,11 +11,11 @@ namespace DAL
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class Rent:IDALTables
+
+    public partial class Rent : IDALTables
     {
         public int Rid { get; set; }
-        public string RuserId { get; set; }
+        public int RuserId { get; set; }
         public System.DateTime RfromDate { get; set; }
         public System.DateTime RtoDate { get; set; }
         public int Rprice { get; set; }
@@ -23,7 +23,7 @@ namespace DAL
         public bool Ractive { get; set; }
         public int RprogramId { get; set; }
         public bool Rstatus { get; set; }
-    
+
         public virtual Program Program { get; set; }
         public virtual User User { get; set; }
     }

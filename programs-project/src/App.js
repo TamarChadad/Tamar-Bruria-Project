@@ -1,12 +1,11 @@
 import './App.css';
-import {Users} from './pages/UsersComponent'
-import {Programs} from './pages/ProgramsComponent'
+import {MainWidget} from './widgets/MainWidget'
 
 
 function App() {
   return (
     <div className="App">
-      <Programs />
+      <MainWidget />
     </div>
   );
 }

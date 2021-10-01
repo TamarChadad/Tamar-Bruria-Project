@@ -8,9 +8,9 @@ export const Programs = () => {
 
     useEffect(() => {
         // dispatch(userActions.getAll());
-        return fetch(`http://localhost:55460/api/program`).then(res => res.json()).then(data => {
+        return fetch(`http://localhost:55460/api/program`, { mode: 'no-cors' }).then(res => res.json()).then(data => {
             setPrograms(data)
-        })
+        }).catch((err) => console.log('error!!!', err));
     }, []);
     return (
         <div className="container">

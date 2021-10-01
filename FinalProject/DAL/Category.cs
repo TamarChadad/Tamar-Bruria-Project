@@ -11,11 +11,20 @@ namespace DAL
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class Category:IDALTables
+
+    public partial class Category : IDALTables
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Category()
+        {
+            this.Program = new HashSet<Program>();
+        }
+
         public int Cid { get; set; }
         public string Cname { get; set; }
         public string Cdescription { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Program> Program { get; set; }
     }
 }
