@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../styles/programs.css';
+import '../styles/programs.scss';
 import ReactPlayer from 'react-player';
 import { useSelector } from 'react-redux'
 
@@ -23,7 +23,7 @@ export const Programs = () => {
     }
 
     useEffect(() => {
-        document.addEventListener('click', () => { if (isVideoOpen) {console.log('yes'); setVideoOpen(false) } });
+        document.addEventListener('click', () => { if (isVideoOpen) { console.log('yes'); setVideoOpen(false) } });
         return () => {
             document.removeEventListener('click', () => { if (isVideoOpen) { setVideoOpen(false) } }, true);
         };
@@ -33,27 +33,43 @@ export const Programs = () => {
         <>
             <div className={`container ${isVideoOpen ? 'body-video-open' : ''}`}>
                 {programs.map((program) => (
-                    <div className="row" key={program.Pid}>
-                        <div className="col-md-8" >
-                            <img className="program-img" src={getPathForProgram(program.Pid, 4)} onClick={() => { handleProgramClick(program) }} />
+                    <>
+                        <div className="row" key={program.Pid}>
+                            <div className="col-md-8 hovereffect" >
+                                <img className=" img-fluid" alt="Responsive image" src={getPathForProgram(program.Pid, 4)} />
+                                <div class="overlay">
+                                    <img className="play-img" src="images/play2.png" onClick={() => { handleProgramClick(program) }} />
+                                </div>
+                            </div>
+                            <div className="col-md-3 program-description">
+                                <b>{program.Pname}</b>
+                                <div>{program.Pdescription}</div>
+                            </div>
                         </div>
-                        <div className="col-md-4 program-description">
-                            <b>{program.Pname}</b>
-                            <div>{program.Pdescription}</div>
-                        </div>
-                    </div>
-
+                        <hr />
+                    </>
                 ))}
             </div>
             {
                 isVideoOpen && (
                     <div className="video-open">
+                        <button className="video-cross-icon close" type="button" aria-label="Close" onClick={() => setVideoOpen(false)}>
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                         <ReactPlayer
-                            className='react-player fixed-bottom'
+                            className='react-player'
                             url={getPathForProgram(selectedProgram.Pid, 1)}
                             width='100%'
                             height='100%'
                             controls={true}
+                            playing={true}
+                            config={{
+                                file: {
+                                  attributes: {
+                                    controlsList: "nodownload"
+                                  }
+                                }
+                              }}
                         />
                     </div>
                 )
