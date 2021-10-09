@@ -124,6 +124,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RentBL.cs" />
     <Compile Include="ResponseBL.cs" />
+    <Compile Include="SendingEmail.cs" />
     <Compile Include="UserBL.cs" />
   </ItemGroup>
   <ItemGroup>

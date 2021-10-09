@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/programs.scss';
 import ReactPlayer from 'react-player';
-import { useSelector } from 'react-redux'
-
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom'
 const fileType = { 4: 'jpg', 1: 'mp4' }
 
 export const Programs = () => {
@@ -37,13 +37,15 @@ export const Programs = () => {
                         <div className="row" key={program.Pid}>
                             <div className="col-md-8 hovereffect" >
                                 <img className=" img-fluid" alt="Responsive image" src={getPathForProgram(program.Pid, 4)} />
-                                <div class="overlay">
+                                <div className="overlay">
                                     <img className="play-img" src="images/play2.png" onClick={() => { handleProgramClick(program) }} />
                                 </div>
                             </div>
                             <div className="col-md-3 program-description">
                                 <b>{program.Pname}</b>
                                 <div>{program.Pdescription}</div>
+                                <button><Link to='/detailsUser'>להתרשמות מתוכנית</Link></button>
+                                <button><Link to='/detailsForRent'>להזמנת התוכנית</Link></button>
                             </div>
                         </div>
                         <hr />

@@ -7,7 +7,7 @@ export const filesSlice = createSlice({
             {
                 "Fid": 3,
                 "Fname": "climax",
-                "Fpath": "video/trailer",
+                "Fpath": "videos/trailer",
                 "FtypeId": 1,
                 "FprogramId": 3
             },

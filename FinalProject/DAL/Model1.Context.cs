@@ -16,7 +16,7 @@ namespace DAL
     public partial class ProgramsEntities : DbContext
     {
         public ProgramsEntities()
-            : base("name=Bruria")
+            : base("name=Tamar")
         {
         }
 
