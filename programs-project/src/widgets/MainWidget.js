@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
 import { Programs } from './Programs';
-import * as apiActions from '../services/Api';
+import {ApiCalls} from '../services/Api';
 
 export const MainWidget = () => {
+    const [GetPrograms] = ApiCalls()
     useEffect(() => {
-        apiActions.GetPrograms();
+        GetPrograms();
     }, []);
 
     return (

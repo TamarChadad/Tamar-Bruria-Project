@@ -44,6 +44,7 @@
     <Property Name="PtargetAudience" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Ptime" Type="Int32" />
     <Property Name="Pdescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PextendedDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Category" Relationship="Self.FK_Program_Category" FromRole="Program" ToRole="Category" />
     <NavigationProperty Name="File" Relationship="Self.FK_File_Program" FromRole="Program" ToRole="File" />
     <NavigationProperty Name="Rent" Relationship="Self.FK_Renting_Renting" FromRole="Program" ToRole="Rent" />
@@ -76,16 +77,6 @@
     <Property Name="RSshown" Type="Boolean" Nullable="false" />
     <NavigationProperty Name="Program" Relationship="Self.FK_Response_Response" FromRole="Response" ToRole="Program" />
     <NavigationProperty Name="User" Relationship="Self.FK_Response_User" FromRole="Response" ToRole="User" />
-  </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <EntityType Name="User">
     <Key>
@@ -193,7 +184,6 @@
     <EntitySet Name="Program" EntityType="Self.Program" />
     <EntitySet Name="Rent" EntityType="Self.Rent" />
     <EntitySet Name="Response" EntityType="Self.Response" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
     <EntitySet Name="User" EntityType="Self.User" />
     <AssociationSet Name="FK_Program_Category" Association="Self.FK_Program_Category">
       <End Role="Category" EntitySet="Category" />

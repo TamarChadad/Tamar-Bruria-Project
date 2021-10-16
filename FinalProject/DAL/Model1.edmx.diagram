@@ -4,15 +4,14 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="2a374dfb9537410f8be5d6b59d441640" Name="Diagram1">
+      <Diagram DiagramId="1ca27d9017d6459c905d1f3985409206" Name="Diagram1">
         <EntityTypeShape EntityType="TamarChadad_BruriaGreenwald_FinalProjectModel.Category" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
         <EntityTypeShape EntityType="TamarChadad_BruriaGreenwald_FinalProjectModel.File" Width="1.5" PointX="5.25" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="TamarChadad_BruriaGreenwald_FinalProjectModel.FileType" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="TamarChadad_BruriaGreenwald_FinalProjectModel.Program" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TamarChadad_BruriaGreenwald_FinalProjectModel.Program" Width="1.5" PointX="3" PointY="4" IsExpanded="true" />
         <EntityTypeShape EntityType="TamarChadad_BruriaGreenwald_FinalProjectModel.Rent" Width="1.5" PointX="8.25" PointY="4.375" IsExpanded="true" />
         <EntityTypeShape EntityType="TamarChadad_BruriaGreenwald_FinalProjectModel.Response" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="TamarChadad_BruriaGreenwald_FinalProjectModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="TamarChadad_BruriaGreenwald_FinalProjectModel.User" Width="1.5" PointX="3" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TamarChadad_BruriaGreenwald_FinalProjectModel.User" Width="1.5" PointX="3" PointY="9.625" IsExpanded="true" />
         <AssociationConnector Association="TamarChadad_BruriaGreenwald_FinalProjectModel.FK_Program_Category" ManuallyRouted="false" />
         <AssociationConnector Association="TamarChadad_BruriaGreenwald_FinalProjectModel.FK_File_FileType" ManuallyRouted="false" />
         <AssociationConnector Association="TamarChadad_BruriaGreenwald_FinalProjectModel.FK_File_Program" ManuallyRouted="false" />

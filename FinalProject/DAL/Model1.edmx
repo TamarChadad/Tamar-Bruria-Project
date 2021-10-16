@@ -45,6 +45,7 @@
           <Property Name="PtargetAudience" Type="nvarchar" MaxLength="50" />
           <Property Name="Ptime" Type="int" />
           <Property Name="Pdescription" Type="nvarchar(max)" />
+          <Property Name="PextendedDescription" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Rent">
           <Key>
@@ -69,16 +70,6 @@
           <Property Name="RSuserId" Type="int" Nullable="false" />
           <Property Name="RSdescription" Type="nvarchar(max)" Nullable="false" />
           <Property Name="RSshown" Type="bit" Nullable="false" />
-        </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -184,7 +175,6 @@
           <EntitySet Name="Program" EntityType="Self.Program" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Rent" EntityType="Self.Rent" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Response" EntityType="Self.Response" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_File_FileType" Association="Self.FK_File_FileType">
             <End Role="FileType" EntitySet="FileType" />
@@ -264,6 +254,7 @@
           <Property Name="PtargetAudience" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Ptime" Type="Int32" />
           <Property Name="Pdescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PextendedDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Category" Relationship="Self.FK_Program_Category" FromRole="Program" ToRole="Category" />
           <NavigationProperty Name="File" Relationship="Self.FK_File_Program" FromRole="Program" ToRole="File" />
           <NavigationProperty Name="Rent" Relationship="Self.FK_Renting_Renting" FromRole="Program" ToRole="Rent" />
@@ -296,16 +287,6 @@
           <Property Name="RSshown" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Program" Relationship="Self.FK_Response_Response" FromRole="Response" ToRole="Program" />
           <NavigationProperty Name="User" Relationship="Self.FK_Response_User" FromRole="Response" ToRole="User" />
-        </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -413,7 +394,6 @@
           <EntitySet Name="Program" EntityType="Self.Program" />
           <EntitySet Name="Rent" EntityType="Self.Rent" />
           <EntitySet Name="Response" EntityType="Self.Response" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="User" EntityType="Self.User" />
           <AssociationSet Name="FK_Program_Category" Association="Self.FK_Program_Category">
             <End Role="Category" EntitySet="Category" />
@@ -492,6 +472,7 @@
                 <ScalarProperty Name="PtargetAudience" ColumnName="PtargetAudience" />
                 <ScalarProperty Name="Ptime" ColumnName="Ptime" />
                 <ScalarProperty Name="Pdescription" ColumnName="Pdescription" />
+                <ScalarProperty Name="PextendedDescription" ColumnName="PextendedDescription" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -518,17 +499,6 @@
                 <ScalarProperty Name="RSuserId" ColumnName="RSuserId" />
                 <ScalarProperty Name="RSdescription" ColumnName="RSdescription" />
                 <ScalarProperty Name="RSshown" ColumnName="RSshown" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="TamarChadad_BruriaGreenwald_FinalProjectModel.sysdiagrams">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

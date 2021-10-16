@@ -11,15 +11,15 @@ namespace DAL
 {
     using System;
     using System.Collections.Generic;
-
-    public partial class File : IDALTables
+    
+    public partial class File: IDALTables
     {
         public int Fid { get; set; }
         public string Fname { get; set; }
         public string Fpath { get; set; }
         public int FtypeId { get; set; }
         public int FprogramId { get; set; }
-
+    
         public virtual FileType FileType { get; set; }
         public virtual Program Program { get; set; }
     }

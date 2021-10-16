@@ -12,26 +12,25 @@ namespace DAL
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-
+    
     public partial class ProgramsEntities : DbContext
     {
         public ProgramsEntities()
             : base("name=Tamar")
         {
         }
-
+    
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
         }
-
+    
         public virtual DbSet<Category> Category { get; set; }
         public virtual DbSet<File> File { get; set; }
         public virtual DbSet<FileType> FileType { get; set; }
         public virtual DbSet<Program> Program { get; set; }
         public virtual DbSet<Rent> Rent { get; set; }
         public virtual DbSet<Response> Response { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<User> User { get; set; }
     }
 }

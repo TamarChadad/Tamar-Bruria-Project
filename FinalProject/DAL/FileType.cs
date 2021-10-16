@@ -11,19 +11,19 @@ namespace DAL
 {
     using System;
     using System.Collections.Generic;
-
-    public partial class FileType : IDALTables
+    
+    public partial class FileType: IDALTables
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public FileType()
         {
             this.File = new HashSet<File>();
         }
-
+    
         public int FTid { get; set; }
         public string FTname { get; set; }
         public string FTdescription { get; set; }
-
+    
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<File> File { get; set; }
     }

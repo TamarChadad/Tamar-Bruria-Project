@@ -1,0 +1,29 @@
+.wrapper-form{
+    direction: rtl;
+    width:50%;
+    height: auto;
+    border: solid 2px grey;
+    border-radius: 15px;
+    margin-right: 25%;
+    margin-top: 5%;
+    padding:3%;
+    label{
+     ////   right:0;
+     //   left:auto
+    }
+
+}
+.con{
+    width: 70%;
+    align-items: center;
+
+}
+.row{
+    margin: 40px;
+}
+
+
+.form-floating > label{
+    direction: rtl;
+    right:0 !important;
+}

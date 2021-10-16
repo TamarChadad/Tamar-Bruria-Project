@@ -18,5 +18,6 @@ public class ProgramDTO:IDTOTables
         public string PtargetAudience { get; set; }
         public int Ptime { get; set; }
         public string Pdescription { get; set; }
+        public string PextendedDescription { get; set; }
     }
 }

@@ -40,6 +40,7 @@
     <Property Name="PtargetAudience" Type="nvarchar" MaxLength="50" />
     <Property Name="Ptime" Type="int" />
     <Property Name="Pdescription" Type="nvarchar(max)" />
+    <Property Name="PextendedDescription" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="Rent">
     <Key>
@@ -64,16 +65,6 @@
     <Property Name="RSuserId" Type="int" Nullable="false" />
     <Property Name="RSdescription" Type="nvarchar(max)" Nullable="false" />
     <Property Name="RSshown" Type="bit" Nullable="false" />
-  </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
   <EntityType Name="User">
     <Key>
@@ -179,7 +170,6 @@
     <EntitySet Name="Program" EntityType="Self.Program" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Rent" EntityType="Self.Rent" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Response" EntityType="Self.Response" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_File_FileType" Association="Self.FK_File_FileType">
       <End Role="FileType" EntitySet="FileType" />

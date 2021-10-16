@@ -11,8 +11,8 @@ namespace DAL
 {
     using System;
     using System.Collections.Generic;
-
-    public partial class Program : IDALTables
+    
+    public partial class Program:IDALTables
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Program()
@@ -21,7 +21,7 @@ namespace DAL
             this.Rent = new HashSet<Rent>();
             this.Response = new HashSet<Response>();
         }
-
+    
         public int Pid { get; set; }
         public string Pname { get; set; }
         public int PcategoryId { get; set; }
@@ -32,7 +32,8 @@ namespace DAL
         public string PtargetAudience { get; set; }
         public Nullable<int> Ptime { get; set; }
         public string Pdescription { get; set; }
-
+        public string PextendedDescription { get; set; }
+    
         public virtual Category Category { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<File> File { get; set; }
