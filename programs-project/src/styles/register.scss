@@ -7,23 +7,24 @@
     margin-right: 25%;
     margin-top: 5%;
     padding:3%;
-    label{
-     ////   right:0;
-     //   left:auto
+    
+   
+    .row{
+        margin: 40px;
+
+        
+    }
+    .con{
+        width: 70%;
+        align-items: center;
+    
+    }
+
+    .invalid-feedback{
+        display: block;
     }
 
 }
-.con{
-    width: 70%;
-    align-items: center;
-
-}
-.row{
-    margin: 40px;
-}
 
 
-.form-floating > label{
-    direction: rtl;
-    right:0 !important;
-}
+

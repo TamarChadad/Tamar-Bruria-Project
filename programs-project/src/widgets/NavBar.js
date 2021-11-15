@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -58,6 +59,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function PrimarySearchAppBar() {
+const user = useSelector((state) => state.user.user)
+
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -160,7 +163,10 @@ export default function PrimarySearchAppBar() {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
+    
       <AppBar position="static">
+      {user&&
+       <div>היי {user.UfirstName}</div>}
         <Toolbar>
           <IconButton
             size="large"

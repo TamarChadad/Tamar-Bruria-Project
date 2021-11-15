@@ -8,22 +8,27 @@ using DTO;
 using BL;
 using System.Web.Http.Cors;
 
+
 namespace Api.Controllers
 {
     [EnableCors(origins: "*", headers: "*", methods: "*")]
+    [RoutePrefix("api/user")]
     public class UserController : ApiController
     { // GET api/users
+        [HttpGet()]
+        [Route("")]
         public IEnumerable<UserDTO> Get()
-        {           
+        {
             return UserBL.GetAll();
         }
 
-        // GET api/users/5
+        // GET api/users/5       
         public UserDTO Get(int id)
         {
             return UserBL.GetUser(id);
         }
-
+        [HttpPost()]
+        [Route("")]
         // POST api/users
         public void Post([FromBody]UserDTO user)
         {
@@ -40,6 +45,19 @@ namespace Api.Controllers
         public void Delete(int id)
         {
             UserBL.DeleteUser(id);
+        }
+        [HttpGet()]
+        [Route("getName/{id}")]
+        public string GetName(int id)
+        {
+            return UserBL.GetShortNameUser(id);
+        }
+
+        [HttpGet()]
+        [Route("login/{userName}/{password}")]
+        public UserDTO GetLogin(string userName, string password)
+        {
+            return UserBL.IsExistUserForLogin(userName, password);
         }
         //{
         //      "UfirstName":"Tamar",

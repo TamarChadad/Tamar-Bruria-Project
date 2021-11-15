@@ -1,15 +1,19 @@
-import React, { useEffect } from 'react';
+import React, { useState, useLayoutEffect } from 'react';
 import { Programs } from './Programs';
-import {ApiCalls} from '../services/Api';
+import { ApiCalls } from '../services/Api';
 
 export const MainWidget = () => {
-    const [GetPrograms] = ApiCalls()
-    useEffect(() => {
+    const { GetPrograms, GetFiles, GetResponses} = ApiCalls()
+    useLayoutEffect(() => {
+        GetFiles();
         GetPrograms();
+        GetResponses();
     }, []);
 
     return (
-        <Programs />
+        <div>
+            <Programs />
+        </div>
     )
 }
 

@@ -3,21 +3,30 @@ import '../styles/programs.scss';
 import ReactPlayer from 'react-player';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { ApiCalls } from '../services/Api';
 
 const fileType = { 4: 'jpg', 1: 'mp4' }
 
-export const Programs = () => {
+export const Programs = () => {    
+
     const programs = useSelector((state) => state.programs.programs);
-    const files = useSelector((state) => state.files.files);
+    const files = useSelector((state) =>  state.files.files);
+    console.log("files", files)
+
+    useEffect(() => {
+        debugger
+        console.log("in useEffect of program")
+        
+    }, []);
+    
     const [selectedProgram, setSelectedProgram] = useState({});
     const [isVideoOpen, setVideoOpen] = useState(false);
     const getUrlWithId = (pid) => {
         return `/program/${pid}`
     }
-    const getPathForProgram = (pId, type) => {
-        const file = files.find(file => file.FprogramId === pId && file.FtypeId === type);
-        console.log(`${file.Fpath}/${file.Fname}.${fileType[type]}`)
-        return `${file.Fpath}/${file.Fname}.${fileType[type]}`;
+    const getPathForProgram  = (pId, type) => {
+        const file =  files.find((file) => file.FprogramId === pId && file.FtypeId === type);
+        return `${file?.Fpath}/${file?.Fname}.${fileType[type]}`;
     }
 
     const handleProgramClick = (program) => {
@@ -25,19 +34,11 @@ export const Programs = () => {
         setVideoOpen(true);
     }
 
-    useEffect(() => {
-        document.addEventListener('click', () => { if (isVideoOpen) { console.log('yes'); setVideoOpen(false) } });
-        return () => {
-            document.removeEventListener('click', () => { if (isVideoOpen) { setVideoOpen(false) } }, true);
-        };
-    }, []);
-
     return (
         <>
             <div className={`container ${isVideoOpen ? 'body-video-open' : ''}`}>
                 {programs.map((program) => (
-                    <>
-
+                    <div key={program.Pid}>
                         <div className="row" key={program.Pid}>
                             <div className="col-md-8 hovereffect" >
                                 <img className=" img-fluid" alt="Responsive image" src={getPathForProgram(program.Pid, 4)} />
@@ -53,7 +54,7 @@ export const Programs = () => {
                             </div>
                         </div>
                         <hr />
-                    </>
+                    </div>
                 ))}
             </div>
             {
