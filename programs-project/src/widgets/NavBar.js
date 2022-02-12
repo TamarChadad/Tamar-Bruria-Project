@@ -165,8 +165,7 @@ const user = useSelector((state) => state.user.user)
     <Box sx={{ flexGrow: 1 }}>
     
       <AppBar position="static">
-      {user&&
-       <div>היי {user.UfirstName}</div>}
+    {user!=null && user.hasOwnProperty("UfirstName") &&<div>היי {user.UfirstName}</div>}
         <Toolbar>
           <IconButton
             size="large"

@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/programs.scss';
 import ReactPlayer from 'react-player';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { ApiCalls } from '../services/Api';
+import { setCurrentProgram } from '../services/program/programSlice';
 
 const fileType = { 4: 'jpg', 1: 'mp4' }
 
@@ -11,6 +12,7 @@ export const Programs = () => {
 
     const programs = useSelector((state) => state.programs.programs);
     const files = useSelector((state) =>  state.files.files);
+    const dispatch = useDispatch()
     console.log("files", files)
 
     useEffect(() => {
@@ -33,6 +35,9 @@ export const Programs = () => {
         setSelectedProgram(program);
         setVideoOpen(true);
     }
+    const UpdateCurrentProgram = (data) =>{
+        dispatch(setCurrentProgram(data));
+    }
 
     return (
         <>
@@ -49,8 +54,8 @@ export const Programs = () => {
                             <div className="col-md-3 program-description">
                                 <b>{program.Pname}</b>
                                 <div>{program.Pdescription}</div>
-                                <button><Link to={getUrlWithId(program.Pid)}>להתרשמות מתוכנית</Link></button>
-                                <button><Link to='/detailsForRent'>להזמנת התוכנית</Link></button>
+                                <button onClick={()=>{UpdateCurrentProgram(program)}}><Link to={getUrlWithId(program.Pid)}>להתרשמות מתוכנית</Link></button>
+                                <button onClick={()=>{UpdateCurrentProgram(program)}}><Link to='/detailsForRent'>להזמנת התוכנית</Link></button>
                             </div>
                         </div>
                         <hr />

@@ -40,7 +40,8 @@ namespace Api.Controllers
         {
             UserBL.UpdateUser(id, user);
         }
-
+        [HttpDelete()]
+        [Route("{id}")]
         // DELETE api/users/5
         public void Delete(int id)
         {

@@ -1,41 +1,45 @@
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/register.scss';
 import { Form, Button, Row, FloatingLabel, Col } from "react-bootstrap"
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { ApiCalls } from '../services/Api';
 import { useSelector } from 'react-redux';
 
-
 export const Login = () => {
     const [submitted, setSubmitted] = useState(false);
-
+    const history = useHistory();
     const userLogin = useSelector((state) => state.user.user);
-    const { IsExistUserForLogin, login } = ApiCalls()
+    const { login } = ApiCalls()
 
     const [user, setUser] = useState({
         Upassword: '',
         UuserName: ''
     });
 
-   async function handleSubmit(e) {
-        e.preventDefault();
-        // console.log(IsExistUserForLogin(user.UuserName, user.Upassword))
-        console.log("username:", user.UuserName, "  password:", user.Upassword)
-        await login(user.UuserName, user.Upassword)
+    useEffect(()=>{
+        console.log("i am in userEffect")
+        console.log("####userLogin = ", userLogin)        
         if (userLogin == null) {
             setSubmitted(true)
-            
             console.log("is not correct")
         }
-        else {
+       else if(submitted||userLogin.hasOwnProperty("UfirstName")){
             setSubmitted(false)
             console.log("is correct and i want to do submit")
-            window.location.href = "http://localhost:3000/detailsForRent" 
+            history.push('')
         }
-        // if(IsExistUserForLogin(user.UuserName, user.Upassword))
-        //     console.log("the user is correct!!")
-        // else console.log("the user is not correct!!")
+    }, [userLogin])
+    function handleSubmit(e) {
+        e.preventDefault();
+        console.log("Change",document.getElementsByName("UuserName") )
+        document.getElementsByName("UuserName").value = ""
+        document.getElementsByName("Upassword").value = ""
+        
+        // console.log(IsExistUserForLogin(user.UuserName, user.Upassword))
+        console.log("###username:", user.UuserName, "  password:", user.Upassword)
+        login(user.UuserName, user.Upassword)
+
+        
     }
     function handleChange(e) {
         const { name, value } = e.target;

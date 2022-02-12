@@ -1,5 +1,5 @@
 
-import React, { useState, useSelector } from 'react';
+import React, { useState, useSelector, useEffect } from 'react';
 import _get from 'lodash/get';
 import '../styles/register.scss';
 import { Form, Button, Row, FloatingLabel, Col } from "react-bootstrap";

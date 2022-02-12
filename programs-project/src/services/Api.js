@@ -40,7 +40,8 @@ export const ApiCalls = () => {
 
 
     function RegisterPost(user) {
-        debugger
+        // debugger
+        console.log(user)
         console.log("i am in register and try to post the user")
         const requestOptions = {
             method: 'POST',
@@ -59,24 +60,31 @@ export const ApiCalls = () => {
         });
     }
 
-    function IsExistUserForLogin(userName, password) {
-        // let result;
-        fetch(`${apiUrl}user/login/${userName}/${password}`)
-            .then(res => res.json())
-            .then((data) => console.log(data))
-        // console.log("result", result)
-        // return result;
-    }
     function login(userName, password) {
-        console.log("in login ==== userName", userName,"  password:", password)
+        if (userName == "" || password == "") {
+            dispatch(setUser(null))
+            return
+        }
+
         fetch(`${apiUrl}user/login/${userName}/${password}`)
             .then(res => res.json())
-            .then((data) => {  console.log("data in apicalls of login", data)
+            .then((data) => {
+                console.log("data in apicalls of login", data)
                 dispatch(setUser(data))
-              
             })
 
     }
-    return { GetPrograms, GetFiles, GetResponses, RegisterPost, IsExistUserForLogin, login };
+    function postRent(rentProgram) {
+        const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(rentProgram)
+        };
+
+        return fetch(`${apiUrl}rent`, requestOptions).then((res) => console.log(res))
+    }
+    //navigate to login
+
+return { GetPrograms, GetFiles, GetResponses, RegisterPost, login, postRent };
 }
 
