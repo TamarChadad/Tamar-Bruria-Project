@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { MuiPickersUtilsProvider } from '@material-ui/pickers';
 import 'date-fns';
+import { v4 as uuid } from 'uuid';
 import DateFnsUtils from '@date-io/date-fns';
 // import Grid from '@material-ui/core/Grid';
 import { KeyboardTimePicker, KeyboardDatePicker } from '@material-ui/pickers';
@@ -19,6 +20,7 @@ export const DetailsForRent = () => {
   const [sureRent, setSureRent] = useState(false)
   const { postRent} = ApiCalls()
   const [isFirst, setIsFirst] = useState(true)
+  
   const [detailsRent, setDetailsRent] = useState({
     "RuserId": user.Uid,
     "RfromDate": new Date(selectedDay),
@@ -29,20 +31,24 @@ export const DetailsForRent = () => {
     "RprogramId": programCurrent.Pid,
     "Rstatus": false
   });
+
   useEffect(() => {
     console.log("in use effect")
     var newDateObj = moment(selectedDay).add(240, 'm').toDate();
     setUntilHour(newDateObj)
     console.log("untilHour", untilHour.getHours())
   }, [selectedDay])
+
   const handleChanges = (e) => {
     const { name, value } = e.target;
 
   }
+
   const handleDateChange = (date) => {
     setSelectedDay(date);
 
   };
+
   const convertDateToString=(str)=> {
     var date = new Date(str),
       mnth = ("0" + (date.getMonth())+1).slice(-2),
@@ -76,6 +82,7 @@ export const DetailsForRent = () => {
   const handleSubmitSendEmail = () => {
     console.log("handleSumbitSentEmail");
     let data = {
+      "Rid": uuid(),
       "RuserId": user.Uid,
       "RfromDate": new Date(selectedDay),
       "RtoDate": new Date(untilHour),
@@ -86,7 +93,7 @@ export const DetailsForRent = () => {
       "Rstatus": false
     };
     setDetailsRent(data);
-    console.log("rentttttt", detailsRent);
+    console.log("rentttttt", data);
     postRent(detailsRent)
 
   }

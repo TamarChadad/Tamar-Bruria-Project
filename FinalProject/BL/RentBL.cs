@@ -18,7 +18,7 @@ namespace BL
             }
         }
 
-        public static RentDTO GetRent(int id)
+        public static RentDTO GetRent(string id)
         {
             return Conversions.ConvertToDTO<Rent, RentDTO>(RentDAL.GetRent(id));
         }
@@ -28,12 +28,12 @@ namespace BL
             RentDAL.AddRent(Conversions.ConvertToEntity<RentDTO, Rent>(rent));
         }
 
-        public static void UpdateRent(int id, RentDTO rent)
+        public static void UpdateRent(string id, RentDTO rent)
         {
             RentDAL.UpdateRent(Conversions.ConvertToEntity<RentDTO, Rent>(rent), id);
         }
 
-        public static void DeleteRent(int id)
+        public static void DeleteRent(string id)
         {
             RentDAL.DeleteRent(id);
         }

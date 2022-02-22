@@ -29,8 +29,8 @@ namespace DAL
         public virtual DbSet<File> File { get; set; }
         public virtual DbSet<FileType> FileType { get; set; }
         public virtual DbSet<Program> Program { get; set; }
-        public virtual DbSet<Rent> Rent { get; set; }
         public virtual DbSet<Response> Response { get; set; }
         public virtual DbSet<User> User { get; set; }
+        public virtual DbSet<Rent> Rent { get; set; }
     }
 }

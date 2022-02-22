@@ -47,24 +47,8 @@
     <Property Name="PextendedDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Category" Relationship="Self.FK_Program_Category" FromRole="Program" ToRole="Category" />
     <NavigationProperty Name="File" Relationship="Self.FK_File_Program" FromRole="Program" ToRole="File" />
-    <NavigationProperty Name="Rent" Relationship="Self.FK_Renting_Renting" FromRole="Program" ToRole="Rent" />
     <NavigationProperty Name="Response" Relationship="Self.FK_Response_Response" FromRole="Program" ToRole="Response" />
-  </EntityType>
-  <EntityType Name="Rent">
-    <Key>
-      <PropertyRef Name="Rid" />
-    </Key>
-    <Property Name="Rid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="RuserId" Type="Int32" Nullable="false" />
-    <Property Name="RfromDate" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="RtoDate" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="Rprice" Type="Int32" Nullable="false" />
-    <Property Name="Rpassword" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Ractive" Type="Boolean" Nullable="false" />
-    <Property Name="RprogramId" Type="Int32" Nullable="false" />
-    <Property Name="Rstatus" Type="Boolean" Nullable="false" />
-    <NavigationProperty Name="Program" Relationship="Self.FK_Renting_Renting" FromRole="Rent" ToRole="Program" />
-    <NavigationProperty Name="User" Relationship="Self.FK_Table_1_User" FromRole="Rent" ToRole="User" />
+    <NavigationProperty Name="Rent" Relationship="TamarChadad_BruriaGreenwald_FinalProjectModel.FK_Renting_Renting" FromRole="Program" ToRole="Rent" />
   </EntityType>
   <EntityType Name="Response">
     <Key>
@@ -90,8 +74,8 @@
     <Property Name="Uphone" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Upassword" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="UuserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="Rent" Relationship="Self.FK_Table_1_User" FromRole="User" ToRole="Rent" />
     <NavigationProperty Name="Response" Relationship="Self.FK_Response_User" FromRole="User" ToRole="Response" />
+    <NavigationProperty Name="Rent" Relationship="TamarChadad_BruriaGreenwald_FinalProjectModel.FK_Table_1_User" FromRole="User" ToRole="Rent" />
   </EntityType>
   <Association Name="FK_Program_Category">
     <End Role="Category" Type="Self.Category" Multiplicity="1" />
@@ -129,18 +113,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Renting_Renting">
-    <End Role="Program" Type="Self.Program" Multiplicity="1" />
-    <End Role="Rent" Type="Self.Rent" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Program">
-        <PropertyRef Name="Pid" />
-      </Principal>
-      <Dependent Role="Rent">
-        <PropertyRef Name="RprogramId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_Response_Response">
     <End Role="Program" Type="Self.Program" Multiplicity="1" />
     <End Role="Response" Type="Self.Response" Multiplicity="*" />
@@ -150,18 +122,6 @@
       </Principal>
       <Dependent Role="Response">
         <PropertyRef Name="RSprogramId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Table_1_User">
-    <End Role="User" Type="Self.User" Multiplicity="1" />
-    <End Role="Rent" Type="Self.Rent" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="User">
-        <PropertyRef Name="Uid" />
-      </Principal>
-      <Dependent Role="Rent">
-        <PropertyRef Name="RuserId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -182,7 +142,6 @@
     <EntitySet Name="File" EntityType="Self.File" />
     <EntitySet Name="FileType" EntityType="Self.FileType" />
     <EntitySet Name="Program" EntityType="Self.Program" />
-    <EntitySet Name="Rent" EntityType="Self.Rent" />
     <EntitySet Name="Response" EntityType="Self.Response" />
     <EntitySet Name="User" EntityType="Self.User" />
     <AssociationSet Name="FK_Program_Category" Association="Self.FK_Program_Category">
@@ -197,21 +156,62 @@
       <End Role="Program" EntitySet="Program" />
       <End Role="File" EntitySet="File" />
     </AssociationSet>
-    <AssociationSet Name="FK_Renting_Renting" Association="Self.FK_Renting_Renting">
-      <End Role="Program" EntitySet="Program" />
-      <End Role="Rent" EntitySet="Rent" />
-    </AssociationSet>
     <AssociationSet Name="FK_Response_Response" Association="Self.FK_Response_Response">
       <End Role="Program" EntitySet="Program" />
       <End Role="Response" EntitySet="Response" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Table_1_User" Association="Self.FK_Table_1_User">
-      <End Role="User" EntitySet="User" />
-      <End Role="Rent" EntitySet="Rent" />
     </AssociationSet>
     <AssociationSet Name="FK_Response_User" Association="Self.FK_Response_User">
       <End Role="User" EntitySet="User" />
       <End Role="Response" EntitySet="Response" />
     </AssociationSet>
+    <EntitySet Name="Rent" EntityType="TamarChadad_BruriaGreenwald_FinalProjectModel.Rent" />
+    <AssociationSet Name="FK_Renting_Renting" Association="TamarChadad_BruriaGreenwald_FinalProjectModel.FK_Renting_Renting">
+      <End Role="Program" EntitySet="Program" />
+      <End Role="Rent" EntitySet="Rent" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_1_User" Association="TamarChadad_BruriaGreenwald_FinalProjectModel.FK_Table_1_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Rent" EntitySet="Rent" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="Rent">
+    <Key>
+      <PropertyRef Name="Rid" />
+    </Key>
+    <Property Name="Rid" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="RuserId" Type="Int32" Nullable="false" />
+    <Property Name="RfromDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RtoDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Rprice" Type="Int32" Nullable="false" />
+    <Property Name="Rpassword" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Ractive" Type="Boolean" Nullable="false" />
+    <Property Name="RprogramId" Type="Int32" Nullable="false" />
+    <Property Name="Rstatus" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Program" Relationship="TamarChadad_BruriaGreenwald_FinalProjectModel.FK_Renting_Renting" FromRole="Rent" ToRole="Program" />
+    <NavigationProperty Name="User" Relationship="TamarChadad_BruriaGreenwald_FinalProjectModel.FK_Table_1_User" FromRole="Rent" ToRole="User" />
+  </EntityType>
+  <Association Name="FK_Renting_Renting">
+    <End Type="TamarChadad_BruriaGreenwald_FinalProjectModel.Program" Role="Program" Multiplicity="1" />
+    <End Type="TamarChadad_BruriaGreenwald_FinalProjectModel.Rent" Role="Rent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Program">
+        <PropertyRef Name="Pid" />
+      </Principal>
+      <Dependent Role="Rent">
+        <PropertyRef Name="RprogramId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_1_User">
+    <End Type="TamarChadad_BruriaGreenwald_FinalProjectModel.User" Role="User" Multiplicity="1" />
+    <End Type="TamarChadad_BruriaGreenwald_FinalProjectModel.Rent" Role="Rent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Uid" />
+      </Principal>
+      <Dependent Role="Rent">
+        <PropertyRef Name="RuserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

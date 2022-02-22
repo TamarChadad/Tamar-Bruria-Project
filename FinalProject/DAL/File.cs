@@ -12,7 +12,7 @@ namespace DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class File: IDALTables
+    public partial class File : IDALTables
     {
         public int Fid { get; set; }
         public string Fname { get; set; }

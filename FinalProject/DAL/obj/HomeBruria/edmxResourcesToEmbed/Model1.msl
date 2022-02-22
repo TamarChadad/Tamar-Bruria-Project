@@ -47,21 +47,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Rent">
-      <EntityTypeMapping TypeName="TamarChadad_BruriaGreenwald_FinalProjectModel.Rent">
-        <MappingFragment StoreEntitySet="Rent">
-          <ScalarProperty Name="Rid" ColumnName="Rid" />
-          <ScalarProperty Name="RuserId" ColumnName="RuserId" />
-          <ScalarProperty Name="RfromDate" ColumnName="RfromDate" />
-          <ScalarProperty Name="RtoDate" ColumnName="RtoDate" />
-          <ScalarProperty Name="Rprice" ColumnName="Rprice" />
-          <ScalarProperty Name="Rpassword" ColumnName="Rpassword" />
-          <ScalarProperty Name="Ractive" ColumnName="Ractive" />
-          <ScalarProperty Name="RprogramId" ColumnName="RprogramId" />
-          <ScalarProperty Name="Rstatus" ColumnName="Rstatus" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Response">
       <EntityTypeMapping TypeName="TamarChadad_BruriaGreenwald_FinalProjectModel.Response">
         <MappingFragment StoreEntitySet="Response">
@@ -84,6 +69,21 @@
           <ScalarProperty Name="Uphone" ColumnName="Uphone" />
           <ScalarProperty Name="Upassword" ColumnName="Upassword" />
           <ScalarProperty Name="UuserName" ColumnName="UuserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rent">
+      <EntityTypeMapping TypeName="TamarChadad_BruriaGreenwald_FinalProjectModel.Rent">
+        <MappingFragment StoreEntitySet="Rent">
+          <ScalarProperty Name="Rstatus" ColumnName="Rstatus" />
+          <ScalarProperty Name="RprogramId" ColumnName="RprogramId" />
+          <ScalarProperty Name="Ractive" ColumnName="Ractive" />
+          <ScalarProperty Name="Rpassword" ColumnName="Rpassword" />
+          <ScalarProperty Name="Rprice" ColumnName="Rprice" />
+          <ScalarProperty Name="RtoDate" ColumnName="RtoDate" />
+          <ScalarProperty Name="RfromDate" ColumnName="RfromDate" />
+          <ScalarProperty Name="RuserId" ColumnName="RuserId" />
+          <ScalarProperty Name="Rid" ColumnName="Rid" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

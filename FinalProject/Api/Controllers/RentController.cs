@@ -18,7 +18,7 @@ namespace Api.Controllers
         }
 
         // GET api/rent/5
-        public RentDTO Get(int id)
+        public RentDTO Get(string id)
         {
             return RentBL.GetRent(id);
         }
@@ -30,13 +30,13 @@ namespace Api.Controllers
         }
 
         // PUT api/rent/5
-        public void Put(int id, [FromBody]RentDTO rent)
+        public void Put(string id, [FromBody]RentDTO rent)
         {
             RentBL.UpdateRent(id, rent);
         }
 
         // DELETE api/rent/5
-        public void Delete(int id)
+        public void Delete(string id)
         {
             RentBL.DeleteRent(id);
         }

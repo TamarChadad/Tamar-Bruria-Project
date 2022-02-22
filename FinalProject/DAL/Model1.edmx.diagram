@@ -9,16 +9,16 @@
         <EntityTypeShape EntityType="TamarChadad_BruriaGreenwald_FinalProjectModel.File" Width="1.5" PointX="5.25" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="TamarChadad_BruriaGreenwald_FinalProjectModel.FileType" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="TamarChadad_BruriaGreenwald_FinalProjectModel.Program" Width="1.5" PointX="3" PointY="4" IsExpanded="true" />
-        <EntityTypeShape EntityType="TamarChadad_BruriaGreenwald_FinalProjectModel.Rent" Width="1.5" PointX="8.25" PointY="4.375" IsExpanded="true" />
         <EntityTypeShape EntityType="TamarChadad_BruriaGreenwald_FinalProjectModel.Response" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="TamarChadad_BruriaGreenwald_FinalProjectModel.User" Width="1.5" PointX="3" PointY="9.625" IsExpanded="true" />
         <AssociationConnector Association="TamarChadad_BruriaGreenwald_FinalProjectModel.FK_Program_Category" ManuallyRouted="false" />
         <AssociationConnector Association="TamarChadad_BruriaGreenwald_FinalProjectModel.FK_File_FileType" ManuallyRouted="false" />
         <AssociationConnector Association="TamarChadad_BruriaGreenwald_FinalProjectModel.FK_File_Program" ManuallyRouted="false" />
-        <AssociationConnector Association="TamarChadad_BruriaGreenwald_FinalProjectModel.FK_Renting_Renting" ManuallyRouted="false" />
         <AssociationConnector Association="TamarChadad_BruriaGreenwald_FinalProjectModel.FK_Response_Response" ManuallyRouted="false" />
-        <AssociationConnector Association="TamarChadad_BruriaGreenwald_FinalProjectModel.FK_Table_1_User" ManuallyRouted="false" />
         <AssociationConnector Association="TamarChadad_BruriaGreenwald_FinalProjectModel.FK_Response_User" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="TamarChadad_BruriaGreenwald_FinalProjectModel.Rent" Width="1.5" PointX="5.25" PointY="8.75" />
+        <AssociationConnector Association="TamarChadad_BruriaGreenwald_FinalProjectModel.FK_Renting_Renting" />
+        <AssociationConnector Association="TamarChadad_BruriaGreenwald_FinalProjectModel.FK_Table_1_User" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

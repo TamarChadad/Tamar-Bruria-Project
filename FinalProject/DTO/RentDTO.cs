@@ -8,7 +8,7 @@ namespace DTO
 {
   public  class RentDTO:IDTOTables
     {
-        public int Rid { get; set; }
+        public string Rid { get; set; }
         public int RuserId { get; set; }
         public System.DateTime RfromDate { get; set; }
         public System.DateTime RtoDate { get; set; }

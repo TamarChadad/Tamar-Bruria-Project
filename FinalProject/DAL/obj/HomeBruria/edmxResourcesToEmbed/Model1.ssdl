@@ -46,7 +46,7 @@
     <Key>
       <PropertyRef Name="Rid" />
     </Key>
-    <Property Name="Rid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Rid" Type="nvarchar" MaxLength="36" Nullable="false" />
     <Property Name="RuserId" Type="int" Nullable="false" />
     <Property Name="RfromDate" Type="datetime" Nullable="false" />
     <Property Name="RtoDate" Type="datetime" Nullable="false" />

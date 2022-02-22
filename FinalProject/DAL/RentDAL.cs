@@ -16,11 +16,11 @@ namespace DAL
             }
         }
 
-        public static Rent GetRent(int id)
+        public static Rent GetRent(string id)
         {
             using (ProgramsEntities ctx = new ProgramsEntities())
             {
-                return ctx.Rent.Single(r => r.Rid == id);
+                return ctx.Rent.Single(r => r.Rid.Equals(id));
             }
         }
 
@@ -33,22 +33,22 @@ namespace DAL
             }
         }
 
-        public static void UpdateRent(Rent rent, int id)
+        public static void UpdateRent(Rent rent, string id)
         {
             using (ProgramsEntities ctx = new ProgramsEntities())
             {
-                Rent rentToRemove = ctx.Rent.Single(r => r.Rid == id);
+                Rent rentToRemove = ctx.Rent.Single(r => r.Rid.Equals(id));
                 ctx.Rent.Remove(rentToRemove);
                 ctx.Rent.Add(rent);
                 ctx.SaveChanges();
             }
         }
 
-        public static void DeleteRent(int id)
+        public static void DeleteRent(string id)
         {
             using (ProgramsEntities ctx = new ProgramsEntities())
             {
-                Rent rentToRemove = ctx.Rent.Single(r => r.Rid == id);
+                Rent rentToRemove = ctx.Rent.Single(r => r.Rid.Equals(id));
                 ctx.Rent.Remove(rentToRemove);
                 ctx.SaveChanges();
             }
